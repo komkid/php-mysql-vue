@@ -19,7 +19,7 @@ var app = new Vue({
 
   methods: {
   	getAllUsers: function () {
-  		axios.get('http://localhost/php-vue/api/v1.php?action=read')
+  		axios.get('api/v1.php?action=read')
   		.then(function (response) {
   			console.log(response);
 
@@ -33,7 +33,7 @@ var app = new Vue({
 
   	addUser: function () {
   		var formData = app.toFormData(app.newUser);
-  		axios.post('http://localhost/php-vue/api/v1.php?action=create', formData)
+  		axios.post('api/v1.php?action=create', formData)
   		.then(function (response) {
   			console.log(response);
   			app.newUser = {username: "", email: "", mobile: ""};
@@ -49,7 +49,7 @@ var app = new Vue({
 
   	updateUser: function () {
   		var formData = app.toFormData(app.clickedUser);
-  		axios.post('http://localhost/php-vue/api/v1.php?action=update', formData)
+  		axios.post('api/v1.php?action=update', formData)
   		.then(function (response) {
   			console.log(response);
   			app.clickedUser = {};
@@ -65,7 +65,7 @@ var app = new Vue({
 
   	deleteUser: function () {
   		var formData = app.toFormData(app.clickedUser);
-  		axios.post('http://localhost/php-vue/api/v1.php?action=delete', formData)
+  		axios.post('api/v1.php?action=delete', formData)
   		.then(function (response) {
   			console.log(response);
   			app.clickedUser = {};
