@@ -25,11 +25,13 @@
 		<div class="container p-5">
 			<div class="row">
 
-				<div class="alert alert-danger col-md-6" id="alertMessage" role="alert" v-if="errorMessage">
+                               <div class="alert alert-danger col-md-12" id="alertMessage" role="alert" v-if="errorMessage">
+                                	<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
 					{{ errorMessage }}
 				</div>
 
-				<div class="alert alert-success col-md-6" id="alertMessage" role="alert" v-if="successMessage">
+				<div class="alert alert-success col-md-12" id="alertMessage" role="alert" v-if="successMessage">
+                                	<button type="button" class="close" @click="clearMessage();"><span aria-hidden="true">&times;</span></button>
 					{{ successMessage }}
 				</div>
 
